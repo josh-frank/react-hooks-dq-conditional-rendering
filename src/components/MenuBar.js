@@ -12,26 +12,22 @@ function MenuBar( { currentDisplayedContent, changeDisplayedContent } ) {
 
   */
 
-  function handleMenuClick( clickTargetString ) {
-    changeDisplayedContent( clickTargetString );
-  }
-
   return (
     <div className="ui four item menu">
-      <span className={ "item" + ( currentDisplayedContent === "Profile" ? " active" : "" ) }>
-        <i className="user large icon" onClick={ () => handleMenuClick( "Profile" ) } />
+      <span className={ "item" + ( currentDisplayedContent === "Profile" ? " active" : "" ) } onClick={ () => changeDisplayedContent( "Profile" ) }>
+        <i className="user large icon" />
       </span>
 
-      <span className={ "item" + ( currentDisplayedContent === "Photos" ? " active" : "" ) }>
-        <i className="photo large icon" onClick={ () => handleMenuClick( "Photos" ) } />
+      <span className={ "item" + ( currentDisplayedContent === "Photos" ? " active" : "" ) } onClick={ () => changeDisplayedContent( "Photos" ) }>
+        <i className="photo large icon" />
       </span>
 
-      <span className={ "item" + ( currentDisplayedContent === "Cocktails" ? " active" : "" ) }>
-        <i className="cocktail large icon" onClick={ () => handleMenuClick( "Cocktails" ) }/>
+      <span className={ "item" + ( currentDisplayedContent === "Cocktails" ? " active" : "" ) } onClick={ () => changeDisplayedContent( "Cocktails" ) }>
+        <i className="cocktail large icon" />
       </span>
 
-      <span className={ "item" + ( currentDisplayedContent === "Pokemon" ? " active" : "" ) }>
-        <i className=" themeisle large icon" onClick={ () => handleMenuClick( "Pokemon" ) }/>
+      <span className={ "item" + ( currentDisplayedContent === "Pokemon" ? " active" : "" ) } onClick={ () => changeDisplayedContent( "Pokemon" ) }>
+        <i className=" themeisle large icon"/>
       </span>
     </div>
   );
