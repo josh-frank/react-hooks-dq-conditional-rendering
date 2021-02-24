@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import MenuBar from "./MenuBar";
 import { Profile, Photos, Cocktails, Pokemon } from "./pages";
 
@@ -12,12 +12,31 @@ function MainBox() {
     - Where should these methods be called?
   */
 
-  let detailsToDisplay = <div>Hi, I'm a div!</div>;
+  const [ currentDisplayedContent, changeDisplayedContent ] = useState( "Profile" );
+
+  let detailsToDisplay = null;
+
+  switch ( true ) {
+    case currentDisplayedContent === "Photos":
+      detailsToDisplay = <Photos />;
+      break;
+    case currentDisplayedContent === "Cocktails":
+      detailsToDisplay = <Cocktails />;
+      break;
+    case currentDisplayedContent === "Pokemon":
+      detailsToDisplay = <Pokemon />;
+      break;
+    default:
+      detailsToDisplay = <Profile />;
+      break;
+  }
+
+  // detailsToDisplay = currentDisplayedContent === "Photos" ? <Photos /> : currentDisplayedContent === "Cocktails" ? <Cocktails /> : currentDisplayedContent === "Pokemon" ? <Pokemon /> : <Profile />
 
   return (
     <div>
-      <MenuBar />
-      {detailsToDisplay}
+      <MenuBar changeDisplayedContent={ changeDisplayedContent }/>
+      { detailsToDisplay }
     </div>
   );
 }
