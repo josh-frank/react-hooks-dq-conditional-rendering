@@ -35,7 +35,7 @@ function MainBox() {
 
   return (
     <div>
-      <MenuBar changeDisplayedContent={ changeDisplayedContent }/>
+      <MenuBar currentDisplayedContent={ currentDisplayedContent } changeDisplayedContent={ changeDisplayedContent }/>
       { detailsToDisplay }
     </div>
   );
